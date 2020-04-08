@@ -1,2 +1,2 @@
-LeetCode Interview Problems solved in Python.
+LeetCode Problems solved in Python.
 
