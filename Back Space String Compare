@@ -1,0 +1,35 @@
+'''
+Given two strings S and T, return if they are equal when both are typed into empty text editors. # means a backspace character.
+
+Example 1:
+
+Input: S = "ab#c", T = "ad#c"
+Output: true
+Explanation: Both S and T become "ac".
+Example 2:
+
+Input: S = "ab##", T = "c#d#"
+Output: true
+Explanation: Both S and T become "".
+
+'''
+class Solution:
+    def backspaceCompare(self, S: str, T: str) -> bool:
+        sStack = []
+        tStack = []
+        
+        for i in S:
+            if i != '#':
+                sStack.append(i)
+            elif sStack:
+                sStack.pop()
+        
+        for j in T:
+            if j != '#':
+                tStack.append(j)
+            elif tStack:
+                tStack.pop()
+        
+        return sStack == tStack
+    
+        
