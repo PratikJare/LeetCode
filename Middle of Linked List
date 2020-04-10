@@ -1,0 +1,19 @@
+'''
+Given a non-empty, singly linked list with head node head, return a middle node of linked list.
+
+If there are two middle nodes, return the second middle node.
+'''
+class Solution:
+    def middleNode(self, head: ListNode) -> ListNode:
+        middle = 0
+        temp = head
+        count = 0
+        while head is not None:
+            count += 1
+            head = head.next
+        middle = (count // 2)
+        
+        for i in range(middle):
+            temp = temp.next
+        return temp
+        
